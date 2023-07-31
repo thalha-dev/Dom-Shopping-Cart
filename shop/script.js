@@ -50,18 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       products = data;
       localStorage.setItem("products", JSON.stringify(products));
       renderProducts(products);
-
-      // adding product to cart
-
-      const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
-
-      for (let i = 0; i < addToCartButtons.length; i++) {
-        addToCartButtons[i].addEventListener("click", (e) => {
-          let id = e.target.value;
-          cart.push(products.find((o) => o.id === Number(id)));
-          localStorage.setItem("cart", JSON.stringify(cart));
-        });
-      }
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -71,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // function that return product markup
 
 function createProduct(product) {
+  console.log(product.id);
   let p = `<div class="product">
             <img src=${product.image} alt=${product.category} />
             <div class="product-info">
@@ -144,6 +133,19 @@ function renderProducts(products) {
         createProduct(e);
     });
   }
+
+  // create event listener for adding product to cart
+
+  const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+
+  for (let i = 0; i < addToCartButtons.length; i++) {
+    addToCartButtons[i].addEventListener("click", (e) => {
+      let id = addToCartButtons[i].value;
+      console.log(id);
+      cart.push(products.find((o) => o.id === Number(id)));
+      localStorage.setItem("cart", JSON.stringify(cart));
+    });
+  }
 }
 
 // filtering based on product ratings
@@ -159,7 +161,6 @@ ratingFilterElement.addEventListener("input", (e) => {
       Math.floor(product.rating.rate) === Number(ratingFilterElement.value)
     );
   });
-  console.log(filteredProducts);
   renderProducts(filteredProducts);
 });
 
@@ -274,6 +275,11 @@ electronicsCategory.onclick = function () {
 // filtering based on products search
 
 productSearchElement.addEventListener("input", (e) => {
+  allCategory.classList.add("category-active");
+  menCategory.classList.remove("category-active");
+  womenCategory.classList.remove("category-active");
+  jeweleryCategory.classList.remove("category-active");
+  electronicsCategory.classList.remove("category-active");
   setTimeout(() => {
     renderProducts(
       products.filter((o) =>
