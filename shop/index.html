@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeShop.</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="nav-header">
+      <p class="nav-title">MeShop.</p>
+      <div class="nav-links">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="../login/index.html">Login</a></li>
+            <li><a href="../signup/index.html">Signup</a></li>
+            <li><a href="../cart/index.html">MyCart</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="home-container">
+      <aside class="filters">
+        <section>
+          <h3>Colors</h3>
+          <ul>
+            <li>
+              <input id="red" type="checkbox" name="color" />
+              <label for="red">Red</label>
+            </li>
+            <li>
+              <input id="blue" type="checkbox" name="color" />
+              <label for="blue">Blue</label>
+            </li>
+            <li>
+              <input id="black" type="checkbox" name="color" />
+              <label for="black">Black</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Sizes</h3>
+          <ul>
+            <li>
+              <input id="s" type="checkbox" name="size" />
+              <label for="s">S</label>
+            </li>
+            <li>
+              <input id="m" type="checkbox" name="size" />
+              <label for="m">M</label>
+            </li>
+            <li>
+              <input id="l" type="checkbox" name="size" />
+              <label for="l">L</label>
+            </li>
+            <li>
+              <input id="xl" type="checkbox" name="size" />
+              <label for="xl">XL</label>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Rating</h3>
+          <div class="rating-filter">
+            <input
+              type="range"
+              id="range"
+              min="0"
+              max="5"
+              value="0"
+              list="ratingValues"
+              class="ratingFilter"
+            />
+            <datalist id="ratingValues">
+              <option value="0" label="0"></option>
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5" label="5"></option>
+            </datalist>
+            <button id="clearRating">X</button>
+          </div>
+        </section>
+        <section>
+          <h3>Price Range</h3>
+          <ul>
+            <li>
+              <input id="0-25" type="checkbox" name="prange" />
+              <label for="0-25">$0 to $25</label>
+            </li>
+            <li>
+              <input id="25-50" type="checkbox" name="prange" />
+              <label for="25-50">$25 to $50</label>
+            </li>
+            <li>
+              <input id="50-100" type="checkbox" name="prange" />
+              <label for="50-100">$50 to $100</label>
+            </li>
+            <li>
+              <input id="100on" type="checkbox" name="prange" />
+              <label for="100on">$100 onwards</label>
+            </li>
+          </ul>
+        </section>
+      </aside>
+      <main-content>
+        <div class="product-container">
+          <input class="product-search" type="text" placeholder="Search" />
+          <div class="categories-container">
+            <div class="category all-category">All</div>
+            <div class="category men-category">Mens</div>
+            <div class="category women-category">Womens</div>
+            <div class="category jewellery-category">Jewellery</div>
+            <div class="category electronics-category">Electronics</div>
+          </div>
+          <div class="products"></div>
+        </div>
+      </main-content>
+    </main>
+  </body>
+</html>

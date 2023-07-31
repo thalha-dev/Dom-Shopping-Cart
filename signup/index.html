@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Signup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../style.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="nav-header">
+      <p class="nav-title">MeShop.</p>
+      <div class="nav-links">
+        <nav>
+          <ul>
+            <li><a href="../shop/index.html">Home</a></li>
+            <li><a href="../login/index.html">Login</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="../cart/index.html">MyCart</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="signup-container">
+      <h3>Signup</h3>
+      <form class="form-container">
+        <input
+          class="signup-firstname"
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+        />
+        <input
+          class="signup-lastname"
+          type="text"
+          name="lastname"
+          placeholder="Last Name"
+        />
+        <input
+          class="signup-email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          class="signup-password"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
+        <input
+          type="password"
+          class="signup-confirm-password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+        />
+        <p class="form-error">Required fields are missing!</p>
+        <div>
+          <button type="submit" class="form-button signup-button">
+            Signup
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
